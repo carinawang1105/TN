@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新西兰南岛 · 旅行计划 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0e1117;
+  --surface: #161b27;
+  --card: #1c2335;
+  --border: #2a3348;
+  --border-light: #334060;
+  --text: #e8eaf0;
+  --text-dim: #7a8499;
+  --text-faint: #3d4a60;
+  --gold: #d4a843;
+  --gold-dim: #8a6b28;
+  --teal: #3db8b8;
+  --teal-dim: #1e6666;
+  --sage: #6daf8a;
+  --rust: #e07055;
+  --lavender: #8b90c8;
+  --amber: #e8a442;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+header {
+  position: relative;
+  padding: 56px 48px 44px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+header::before {
+  content: 'SOUTH ISLAND';
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 140px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.025);
+  white-space: nowrap;
+  line-height: 1;
+  pointer-events: none;
+  letter-spacing: -4px;
+}
+
+.header-inner { max-width: 1000px; margin: 0 auto; }
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--teal);
+}
+
+h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+h1 .accent {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.meta-value {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.meta-value.highlight { color: var(--gold); }
+
+/* Route breadcrumb */
+.route-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+}
+.route-stop {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+.route-sep { color: var(--gold-dim); font-size: 12px; }
+
+/* ── BUDGET BAR ─────────────────────────────────── */
+.budget-bar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 0 56px;
+}
+
+.budget-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  divide-x: 1px solid var(--border);
+}
+
+.budget-cell {
+  padding: 20px 0;
+  border-right: 1px solid var(--border);
+  padding-right: 32px;
+  margin-right: 32px;
+}
+.budget-cell:last-child { border-right: none; }
+
+.b-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.b-amount {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.b-amount .curr {
+  font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  color: var(--text-dim);
+  margin-left: 4px;
+}
+
+.b-amount.total { color: var(--rust); }
+
+/* ── MAIN ───────────────────────────────────────── */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 56px 56px 80px;
+}
+
+/* ── DAY CARD ───────────────────────────────────── */
+.day-card {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  margin-bottom: 4px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: up 0.5s ease forwards;
+}
+
+@keyframes up { to { opacity:1; transform:translateY(0); } }
+.day-card:nth-child(1){animation-delay:.05s}
+.day-card:nth-child(2){animation-delay:.1s}
+.day-card:nth-child(3){animation-delay:.15s}
+.day-card:nth-child(4){animation-delay:.2s}
+.day-card:nth-child(5){animation-delay:.25s}
+.day-card:nth-child(6){animation-delay:.3s}
+.day-card:nth-child(7){animation-delay:.35s}
+.day-card:nth-child(8){animation-delay:.4s}
+.day-card:nth-child(9){animation-delay:.45s}
+
+/* Left: timeline */
+.tl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 28px;
+  gap: 0;
+}
+
+.tl-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  text-align: center;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.tl-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--gold-dim);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.tl-dot.pending {
+  background: var(--text-faint);
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--text-faint);
+}
+
+.tl-line {
+  width: 1px;
+  flex: 1;
+  min-height: 24px;
+  background: linear-gradient(to bottom, var(--gold-dim), var(--border));
+  margin-top: 8px;
+}
+
+.day-card:last-child .tl-line { display: none; }
+
+/* Right: content */
+.dc {
+  padding: 20px 0 36px 28px;
+  border-left: 1px solid var(--border);
+  margin-left: -1px;
+}
+
+.dc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.dc-day-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.dc-weekday {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+}
+
+.dc-route {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* Hotel info row */
+.hotel-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(109, 175, 138, 0.07);
+  border: 1px solid rgba(109, 175, 138, 0.18);
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.hotel-row.pending {
+  background: rgba(224, 112, 85, 0.07);
+  border-color: rgba(224, 112, 85, 0.2);
+}
+
+.hotel-icon {
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.hotel-details { flex: 1; }
+
+.hotel-name {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.hotel-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-dim);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  line-height: 1.6;
+}
+
+.hotel-sub .sep { color: var(--text-faint); }
+
+.hotel-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-left: auto;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.badge-ok {
+  background: rgba(109, 175, 138, 0.15);
+  color: var(--sage);
+  border: 1px solid rgba(109, 175, 138, 0.3);
+}
+
+.badge-tbd {
+  background: rgba(224, 112, 85, 0.15);
+  color: var(--rust);
+  border: 1px solid rgba(224, 112, 85, 0.3);
+}
+
+.hotel-cost {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--gold);
+  white-space: nowrap;
+  align-self: center;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+/* Activities */
+.act-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.act-tag {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-light);
+  padding: 6px 11px;
+  font-size: 12px;
+  color: var(--text-dim);
+  border-radius: 2px;
+  transition: border-color 0.15s, color 0.15s;
+  line-height: 1.6;
+  cursor: default;
+}
+
+.act-tag small {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--gold);
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+
+.act-tag .act-addr-btn {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--teal);
+  border: 1px solid rgba(61,184,184,0.3);
+  padding: 2px 7px;
+  border-radius: 2px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+.act-tag .act-addr-btn:hover { background: rgba(61,184,184,0.1); }
+
+.act-tag .act-park-btn {
+  display: inline-block;
+  margin-top: 4px;
+  margin-left: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--amber);
+  border: 1px solid rgba(232,164,66,0.35);
+  padding: 2px 7px;
+  border-radius: 2px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+.act-tag .act-park-btn:hover { background: rgba(232,164,66,0.1); }
+
+.act-addr-box {
+  display: none;
+  margin-top: 6px;
+  background: rgba(61,184,184,0.07);
+  border: 1px solid rgba(61,184,184,0.2);
+  padding: 8px 12px;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text);
+  line-height: 1.6;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.act-addr-box.open { display: flex; }
+.act-addr-box .act-addr-text { flex: 1; user-select: all; }
+
+.act-park-box {
+  display: none;
+  margin-top: 4px;
+  background: rgba(232,164,66,0.06);
+  border: 1px solid rgba(232,164,66,0.2);
+  padding: 8px 12px;
+  border-radius: 2px;
+  font-size: 11.5px;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+.act-park-box.open { display: block; }
+
+.act-addr-box .act-copy-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  background: var(--teal-dim);
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.act-addr-box .act-copy-btn:hover { opacity: 0.75; }
+.act-addr-box .act-copy-btn.copied { background: var(--sage); }
+
+/* Time schedule */
+.schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.sched-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 13px;
+}
+
+.sched-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--gold);
+  white-space: nowrap;
+  margin-top: 2px;
+  min-width: 50px;
+}
+
+.sched-desc {
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+
+/* Notes */
+.notes-box {
+  background: rgba(139, 144, 200, 0.06);
+  border-left: 2px solid var(--lavender);
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  font-weight: 300;
+}
+
+/* Bookings */
+.book-section { margin-bottom: 14px; }
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 1px;
+  background: var(--text-faint);
+}
+
+.book-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+  background: rgba(212, 168, 67, 0.05);
+  border: 1px solid rgba(212, 168, 67, 0.15);
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.book-name {
+  font-size: 13px;
+  color: var(--text);
+  flex: 1;
+  min-width: 140px;
+}
+
+.book-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+.book-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(61,184,184,0.35);
+  padding-bottom: 1px;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+.book-link:hover { opacity: 0.65; }
+
+/* Scenic highlights */
+.scenic-box {
+  background: rgba(61, 184, 184, 0.05);
+  border: 1px solid rgba(61, 184, 184, 0.15);
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  font-weight: 300;
+}
+
+.scenic-box strong {
+  color: var(--teal);
+  font-weight: 500;
+}
+
+/* ── COST SUMMARY ────────────────────────────────── */
+.cost-summary {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 32px 36px;
+  margin-top: 48px;
+}
+
+.cost-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  font-style: italic;
+}
+
+.cost-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+}
+
+.cost-row-label {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.cost-row-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--gold);
+}
+
+.cost-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 16px;
+  background: rgba(212, 168, 67, 0.08);
+  border: 1px solid rgba(212, 168, 67, 0.25);
+  margin-top: 4px;
+}
+
+.cost-total-label {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.cost-total-val {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 28px;
+  color: var(--gold);
+}
+
+.cost-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* ── FOOTER ─────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 56px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--text-faint);
+}
+
+/* Address toggle */
+.addr-toggle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--teal);
+  cursor: pointer;
+  border: 1px solid rgba(61,184,184,0.3);
+  padding: 3px 9px;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s;
+  user-select: none;
+}
+.addr-toggle:hover { background: rgba(61,184,184,0.1); }
+
+.addr-box {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  background: rgba(61,184,184,0.06);
+  border: 1px solid rgba(61,184,184,0.2);
+  border-top: none;
+  padding: 10px 14px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.addr-box.open { display: flex; }
+
+.addr-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text);
+  flex: 1;
+  line-height: 1.5;
+  user-select: all;
+}
+
+.copy-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  background: var(--teal-dim);
+  color: #fff;
+  border: none;
+  padding: 5px 14px;
+  cursor: pointer;
+  border-radius: 2px;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.copy-btn:hover { opacity: 0.8; }
+.copy-btn.copied { background: var(--sage); }
+
+  header, main { padding-left: 24px; padding-right: 24px; }
+  .budget-bar { padding-left: 24px; padding-right: 24px; }
+  .budget-inner { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .budget-cell { border-right: none; padding-right: 0; margin-right: 0; }
+  .day-card { grid-template-columns: 56px 1fr; }
+  .dc { padding-left: 16px; }
+  .cost-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 26px; }
+  header::before { display: none; }
+}
+/* ── MOBILE ──────────────────────────────────────── */
+@media (max-width: 640px) {
+  header { padding: 28px 16px 24px; }
+  header::before { display: none; }
+  h1 { font-size: 24px; letter-spacing: 0; }
+  .eyebrow { font-size: 10px; }
+  .meta-row { gap: 16px; margin-top: 20px; padding-top: 16px; }
+  .meta-value { font-size: 16px; }
+  .route-crumb { gap: 4px; }
+  .route-stop { font-size: 9px; }
+
+  .budget-bar { display: none; }
+
+  main { padding: 20px 16px 48px; }
+
+  .day-card { grid-template-columns: 48px 1fr; }
+  .tl { padding-top: 16px; }
+  .tl-date { font-size: 9px; }
+  .dc { padding: 12px 0 20px 12px; }
+  .dc-route { font-size: 16px; margin-bottom: 10px; }
+  .dc-day-num { font-size: 9px; }
+  .dc-weekday { font-size: 9px; }
+
+  .hotel-row { padding: 8px 10px; gap: 6px; }
+  .hotel-name { font-size: 12px; }
+  .hotel-sub { font-size: 9px; gap: 6px; flex-direction: column; gap: 2px; }
+  .hotel-badge { font-size: 8px; padding: 1px 6px; }
+
+  .act-grid { gap: 5px; }
+  .act-tag { font-size: 12px; padding: 6px 9px; }
+  .act-tag small { font-size: 9px; }
+  .act-addr-btn, .act-park-btn { font-size: 9px; padding: 3px 8px; }
+  .act-addr-box { padding: 7px 9px; }
+  .act-addr-box .act-addr-text { font-size: 10px; }
+  .act-addr-box .act-copy-btn { font-size: 9px; padding: 4px 10px; width: 100%; margin-top: 6px; }
+  .act-park-box { font-size: 11px; padding: 7px 9px; }
+
+  .schedule { gap: 5px; }
+  .sched-item { gap: 8px; font-size: 12px; }
+  .sched-time { font-size: 9px; min-width: 56px; }
+  .section-label { font-size: 8px; }
+
+  .notes-box { font-size: 12px; padding: 8px 10px; }
+  .scenic-box { font-size: 12px; padding: 8px 10px; }
+
+  .book-section { margin-bottom: 10px; }
+  .book-item { padding: 7px 10px; flex-wrap: wrap; gap: 6px; }
+  .book-name { font-size: 12px; min-width: 100%; }
+  .book-price { font-size: 11px; }
+  .book-link { font-size: 10px; }
+
+  .addr-toggle, .addr-box .copy-btn { font-size: 10px; }
+  .addr-box { padding: 8px 10px; }
+  .addr-text { font-size: 10px; }
+
+  footer { padding: 20px 16px; font-size: 9px; }
+}
+
+@media (max-width: 380px) {
+  h1 { font-size: 20px; }
+  .dc-route { font-size: 14px; }
+  .day-card { grid-template-columns: 42px 1fr; }
+  .dc { padding-left: 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════ -->
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">2026 · New Zealand</div>
+    <h1>新西兰 <span class="accent">南岛</span> · 自驾旅行</h1>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <span class="meta-label">出发日期</span>
+        <span class="meta-value">Jun 25, 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">返回日期</span>
+        <span class="meta-value">Jul 3, 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">行程天数</span>
+        <span class="meta-value highlight">9 天 8 晚</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">交通方式</span>
+        <span class="meta-value">全程自驾</span>
+      </div>
+      
+    </div>
+
+    <div class="route-crumb" style="margin-top:20px;">
+      <span class="route-stop">Sydney</span><span class="route-sep">›</span>
+      <span class="route-stop">Christchurch</span><span class="route-sep">›</span>
+      <span class="route-stop">Lake Tekapo</span><span class="route-sep">›</span>
+      <span class="route-stop">Mt Cook</span><span class="route-sep">›</span>
+      <span class="route-stop">Twizel</span><span class="route-sep">›</span>
+      <span class="route-stop">Wanaka</span><span class="route-sep">›</span>
+      <span class="route-stop">Queenstown</span><span class="route-sep">›</span>
+      <span class="route-stop">Te Anau</span><span class="route-sep">›</span>
+      <span class="route-stop">Milford Sound</span><span class="route-sep">›</span>
+      <span class="route-stop">Dunedin</span><span class="route-sep">›</span>
+      <span class="route-stop">Christchurch</span><span class="route-sep">›</span>
+      <span class="route-stop">Sydney</span>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- ═══ TIMELINE ══════════════════════════════════════ -->
+<main>
+
+  <!-- ── DAY 1 ── -->
+  <div class="day-card">
+    <div class="tl">
+      <div class="tl-date">Jun<br>25</div>
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="dc">
+      <div class="dc-header">
+        <span class="dc-day-num">DAY 01</span>
+        <span class="dc-weekday">Thursday</span>
+      </div>
+      <div class="dc-route">Sydney → Christchurch ✈</div>
+      <div class="act-grid">
+        <span class="act-tag">✈ 阿联酋航空 EK412</span>
+        <span class="act-tag">🛫 07:50 悉尼金斯福德 T1 出发</span>
+        <span class="act-tag">🛬 12:55 基督城国际 抵达</span>
+        <span class="act-tag">🏙 入住基督城</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 2 ── -->
+  <div class="day-card">
+    <div class="tl">
+      <div class="tl-date">Jun<br>26</div>
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="dc">
+      <div class="dc-header">
+        <span class="dc-day-num">DAY 02</span>
+        <span class="dc-weekday">Friday</span>
+      </div>
+      <div class="dc-route">基督城 Christchurch</div>
+      <div class="act-grid">
+        <span class="act-tag">🌿 Botanic Gardens 植物园<br><small>约 1–1.5h · 最晚 12:00 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-botanic')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-botanic')">🅿️ 停车</span><div class="act-addr-box" id="aa-botanic"><span class="act-addr-text">Christchurch Botanic Gardens, Rolleston Avenue, Christchurch 8013, New Zealand</span><button class="act-copy-btn" data-addr="Christchurch Botanic Gardens, Rolleston Avenue, Christchurch 8013, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-botanic">🅿️ <strong>收费</strong> · Armagh St / Riccarton Ave 停车场<br>收费停车场</div></span>
+        <span class="act-tag">🛒 Riverside Market 河畔市集<br><small>约 1h · 逛吃结合</small><span class="act-addr-btn" onclick="toggleActAddr('aa-riverside')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-riverside')">🅿️ 停车</span><div class="act-addr-box" id="aa-riverside"><span class="act-addr-text">Riverside Market, 96 Oxford Terrace, Christchurch 8011, New Zealand</span><button class="act-copy-btn" data-addr="Riverside Market, 96 Oxford Terrace, Christchurch 8011, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-riverside">🅿️ <strong>收费</strong> · 周边 Wilson 等停车场<br>建议与植物园合并停一次</div></span>
+        <span class="act-tag">🚃 Historic Tram 复古电车<br><small>约 1h · Hop-on Hop-off 全日票</small><span class="act-addr-btn" onclick="toggleActAddr('aa-tram')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-tram')">🅿️ 停车</span><div class="act-addr-box" id="aa-tram"><span class="act-addr-text">Cathedral Junction Stop 1, 109 Worcester Street, Christchurch 8011, New Zealand</span><button class="act-copy-btn" data-addr="Cathedral Junction Stop 1, 109 Worcester Street, Christchurch 8011, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-tram">🅿️ <strong>收费</strong> · 附近市区收费停车场<br>建议步行前往，从市中心酒店约 10 分钟</div></span>
+        <span class="act-tag">🏛 大教堂广场<br><small>约 30min · 随意逛</small><span class="act-addr-btn" onclick="toggleActAddr('aa-cathedral')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-cathedral')">🅿️ 停车</span><div class="act-addr-box" id="aa-cathedral"><span class="act-addr-text">Cathedral Square, Christchurch Central City, Christchurch 8011, New Zealand</span><button class="act-copy-btn" data-addr="Cathedral Square, Christchurch Central City, Christchurch 8011, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-cathedral">🅿️ <strong>收费</strong> · 周边市区停车场<br>建议与电车/市集合并停一次车步行游览</div></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 3 ── -->
+  <div class="day-card">
+    <div class="tl">
+      <div class="tl-date">Jun<br>27</div>
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="dc">
+      <div class="dc-header">
+        <span class="dc-day-num">DAY 03</span>
+        <span class="dc-weekday">Saturday</span>
+      </div>
+      <div class="dc-route">Christchurch → Lake Tekapo → Mt Cook → Twizel</div>
+
+      <div class="hotel-row">
+        <span class="hotel-icon">🏠</span>
+        <div class="hotel-details">
+          <div class="hotel-name">Mountain Chalets Motel</div>
+          <div class="hotel-sub">
+            <span>🍳 无早餐</span>
+            <span class="sep">|</span>
+            <span>📥 入住 14:00–20:00</span>
+            <span class="sep">|</span>
+            <span>📤 离店 08:00–10:00</span>
+          </div>
+        </div>
+        <span class="addr-toggle" onclick="toggleAddr('addr-twizel')">📍 地址</span>
+        <span class="hotel-badge badge-ok">已确认</span>
+        
+      </div>
+      <div class="addr-box" id="addr-twizel">
+        <span class="addr-text">Mountain Chalets Motel, 12 Wairepo Road, Twizel 7901, New Zealand</span>
+        <button class="copy-btn" onclick="copyAddr('Mountain Chalets Motel, 12 Wairepo Road, Twizel 7901, New Zealand', this)">复制</button>
+      </div>
+
+      <div class="act-grid">
+        <span class="act-tag">⛪ Church of the Good Shepherd 牧马人教堂<br><small>约 30–45min · 最晚 10:30 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-church')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-church')">🅿️ 停车</span><div class="act-addr-box" id="aa-church"><span class="act-addr-text">Church of the Good Shepherd, Pioneer Drive, Lake Tekapo 7999, New Zealand</span><button class="act-copy-btn" data-addr="Church of the Good Shepherd, Pioneer Drive, Lake Tekapo 7999, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-church">🅿️ <strong>免费</strong> · 教堂附近路边停车<br>官方建议停在村庄侧，步行过桥前往</div></span>
+        <span class="act-tag">💙 Lake Tekapo 湖边<br><small>含教堂共约 1–1.5h · 最晚 11:00 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-tekapo')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-tekapo')">🅿️ 停车</span><div class="act-addr-box" id="aa-tekapo"><span class="act-addr-text">Lake Tekapo, Mackenzie District, Canterbury 7999, New Zealand</span><button class="act-copy-btn" data-addr="Lake Tekapo, Mackenzie District, Canterbury 7999, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-tekapo">🅿️ <strong>免费</strong> · 镇内路边停车<br>停车位充裕，无时间限制</div></span>
+        <span class="act-tag">🔵 Lake Pukaki + Peter's Lookout<br><small>约 30min · 最晚 12:00 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-pukaki')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-pukaki')">🅿️ 停车</span><div class="act-addr-box" id="aa-pukaki"><span class="act-addr-text">Peter's Lookout, State Highway 80, Lake Pukaki, Mackenzie District, New Zealand</span><button class="act-copy-btn" data-addr="Peter's Lookout, State Highway 80, Lake Pukaki, Mackenzie District, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-pukaki">🅿️ <strong>免费</strong> · 路边专属停车区<br>无时间限制，约可停 20–30 辆</div></span>
+        <span class="act-tag">🏔 Mt Cook 村 · 远眺雪山<br><small>约 1–1.5h · 最晚 14:30 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-mtcook')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-mtcook')">🅿️ 停车</span><div class="act-addr-box" id="aa-mtcook"><span class="act-addr-text">Aoraki Mount Cook Village, Mount Cook Road, Mackenzie District 7999, New Zealand</span><button class="act-copy-btn" data-addr="Aoraki Mount Cook Village, Mount Cook Road, Mackenzie District 7999, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-mtcook">⚠️ <strong>收费（2025年12月新政策）</strong><br>White Horse Hill 停车场 /小时<br>前 20 分钟免费 · 只接受信用卡，不收现金</div></span>
+        <span class="act-tag">🚁 直升机观光（可选）<br><small>约 30–45min · 需提前预订</small></span>
+        <span class="act-tag">⭐ 星空 / 银河观测<br><small>夜间 · 约 1h</small><span class="act-addr-btn" onclick="toggleActAddr('aa-stars')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-stars')">🅿️ 停车</span><div class="act-addr-box" id="aa-stars"><span class="act-addr-text">Lake Ruataniwha, Ruataniwha Road, Twizel 7901, New Zealand</span><button class="act-copy-btn" data-addr="Lake Ruataniwha, Ruataniwha Road, Twizel 7901, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-stars">🅿️ <strong>免费</strong> · 湖边停车场<br>暗夜保护区，无时间限制</div></span>
+      </div>
+
+      <div class="schedule">
+        <div class="section-label">行程时间轴</div>
+        <div class="sched-item"><span class="sched-time">早晨</span><span class="sched-desc">从 Christchurch 出发</span></div>
+        <div class="sched-item"><span class="sched-time">途中</span><span class="sched-desc">Lake Tekapo — 牧马人教堂 + 湖边，约 1.5 小时</span></div>
+        <div class="sched-item"><span class="sched-time">途中</span><span class="sched-desc">Lake Pukaki 蓝冰湖打卡，Peter's Lookout 机位</span></div>
+        <div class="sched-item"><span class="sched-time">到达</span><span class="sched-desc">Mt Cook 村 — 远眺雪山，可选直升机观光</span></div>
+        <div class="sched-item"><span class="sched-time">15:00-16:00</span><span class="sched-desc">下山返回，途经 Tekapo 看银河星空</span></div>
+        <div class="sched-item"><span class="sched-time">晚上</span><span class="sched-desc">开车约 2 小时到 Twizel，入住</span></div>
+        <div class="sched-item"><span class="sched-time">夜间</span><span class="sched-desc">开车去 Lake Ruataniwha 湖边看星空（暗夜保护区，免费）</span></div>
+      </div>
+
+      <div class="scenic-box">
+        <strong>📍 风景重点：</strong>Lake Pukaki 是南岛最蓝的冰川湖，晴天下呈荧光蓝色，Peter's Lookout 是最经典拍摄角度。Mt Cook 村可远眺新西兰最高峰库克山，有直升机观光可选。
+      </div>
+
+      <div class="notes-box">
+        ⚠️ 晚间气温接近 0°C，必备：羽绒服 + 帽子 + 手套。Lake Ruataniwha 属于暗夜保护区，免费停车，银河肉眼可见。<br><br>
+        🅿️ <strong>Mt Cook 停车新政策（2025年12月起）：</strong>White Horse Hill 停车场收费 按小时收费，只接受信用卡，请提前备好。
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 4 ── -->
+  <div class="day-card">
+    <div class="tl">
+      <div class="tl-date">Jun<br>28</div>
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="dc">
+      <div class="dc-header">
+        <span class="dc-day-num">DAY 04</span>
+        <span class="dc-weekday">Sunday</span>
+      </div>
+      <div class="dc-route">Twizel → Wanaka → Arrowtown → Queenstown</div>
+
+      <div class="hotel-row">
+        <span class="hotel-icon">🏨</span>
+        <div class="hotel-details">
+          <div class="hotel-name">Crowne Plaza Queenstown</div>
+          <div class="hotel-sub">
+            <span>🍳 含早餐</span>
+            <span class="sep">|</span>
+            <span>📥 入住 15:00 之后</span>
+            <span class="sep">|</span>
+            <span>📤 离店 11:00 之前</span>
+          </div>
+        </div>
+        <span class="addr-toggle" onclick="toggleAddr('addr-queenstown')">📍 地址</span>
+        <span class="hotel-badge badge-ok">已确认</span>
+        
+      </div>
+      <div class="addr-box" id="addr-queenstown">
+        <span class="addr-text">Crowne Plaza Queenstown, 93 Beach Street, Queenstown 9300, New Zealand</span>
+        <button class="copy-btn" onclick="copyAddr('Crowne Plaza Queenstown, 93 Beach Street, Queenstown 9300, New Zealand', this)">复制</button>
+      </div>
+
+      <div class="act-grid">
+        <span class="act-tag">🌳 Wanaka Tree 网红孤树<br><small>约 20–30min · 湖边随拍</small><span class="act-addr-btn" onclick="toggleActAddr('aa-wanakatree')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-wanakatree')">🅿️ 停车</span><div class="act-addr-box" id="aa-wanakatree"><span class="act-addr-text">That Wanaka Tree, Roys Bay Lakefront, Wanaka 9305, New Zealand</span><button class="act-copy-btn" data-addr="That Wanaka Tree, Roys Bay Lakefront, Wanaka 9305, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-wanakatree">🅿️ <strong>免费</strong> · Wanaka Marina Carpark 或 Ardmore Street 路边<br>步行 3–5 分钟可到</div></span>
+        <span class="act-tag">🏠 Puzzling World 斜屋<br><small>约 1.5–2h · 最晚 14:00 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-puzzling')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-puzzling')">🅿️ 停车</span><div class="act-addr-box" id="aa-puzzling"><span class="act-addr-text">Puzzling World, 188 Wanaka-Luggate Highway, Wanaka 9305, New Zealand</span><button class="act-copy-btn" data-addr="Puzzling World, 188 Wanaka-Luggate Highway, Wanaka 9305, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-puzzling">🅿️ <strong>免费</strong> · 自带免费停车场<br>场地宽敞，无需担心</div></span>
+        <span class="act-tag">🏞 Wanaka 湖边午餐<br><small>约 1h · 最晚 15:00 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-wanaka')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-wanaka')">🅿️ 停车</span><div class="act-addr-box" id="aa-wanaka"><span class="act-addr-text">Wanaka Lakefront, Lakeside Road, Wanaka 9305, New Zealand</span><button class="act-copy-btn" data-addr="Wanaka Lakefront, Lakeside Road, Wanaka 9305, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-wanaka">🅿️ <strong>免费</strong> · Ardmore Street / Lakeside Road 路边停车<br>数量充裕</div></span>
+        <span class="act-tag">🛣 Lindis Pass 中线公路<br><small>途中风景路段 · 不停车约 1h</small></span>
+        <span class="act-tag">⛏ Arrowtown 淘金小镇<br><small>约 1–1.5h · 最晚 17:00 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-arrowtown')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-arrowtown')">🅿️ 停车</span><div class="act-addr-box" id="aa-arrowtown"><span class="act-addr-text">Buckingham Street, Arrowtown 9302, New Zealand</span><button class="act-copy-btn" data-addr="Buckingham Street, Arrowtown 9302, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-arrowtown">🅿️ <strong>免费</strong> · Arrow Lane Carpark 及镇内路边<br>均免费，无需担心</div></span>
+      </div>
+
+      <div class="schedule">
+        <div class="section-label">行程时间轴</div>
+        <div class="sched-item"><span class="sched-time">早晨</span><span class="sched-desc">从 Twizel 出发，走中线（勿走1号公路），约 3 小时</span></div>
+        <div class="sched-item"><span class="sched-time">12:00</span><span class="sched-desc">抵达 Wanaka — 湖边吃喝，Puzzling World 斜屋，Wanaka Tree 打卡</span></div>
+        <div class="sched-item"><span class="sched-time">15:00</span><span class="sched-desc">出发 Arrowtown（淘金镇），约 40 分钟车程</span></div>
+        <div class="sched-item"><span class="sched-time">17:00-18:00</span><span class="sched-desc">从 Arrowtown 开车直接前往皇后镇，约 25 分钟</span></div>
+        <div class="sched-item"><span class="sched-time">晚上</span><span class="sched-desc">入住皇后镇，湖畔夜景</span></div>
+      </div>
+
+      <div class="scenic-box">
+        <strong>📍 风景重点：</strong>Wanaka Tree 是南岛最具辨识度的风景之一，生长在湖边的一棵柳树，冬季湖面平静反射极佳。Arrowtown 保留了 19 世纪淘金热时期的建筑，秋冬金黄落叶氛围绝美。
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 5 ── -->
+  <div class="day-card">
+    <div class="tl">
+      <div class="tl-date">Jun<br>29</div>
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="dc">
+      <div class="dc-header">
+        <span class="dc-day-num">DAY 05</span>
+        <span class="dc-weekday">Monday</span>
+      </div>
+      <div class="dc-route">Queenstown → Te Anau</div>
+
+      <div class="hotel-row">
+        <span class="hotel-icon">🏨</span>
+        <div class="hotel-details">
+          <div class="hotel-name">Distinction Te Anau Hotel</div>
+          <div class="hotel-sub">
+            <span>🍳 含早餐</span>
+            <span class="sep">|</span>
+            <span>📥 入住 14:00 之后</span>
+            <span class="sep">|</span>
+            <span>📤 离店 06:30–10:00</span>
+          </div>
+        </div>
+        <span class="addr-toggle" onclick="toggleAddr('addr-teanau')">📍 地址</span>
+        <span class="hotel-badge badge-ok">已确认</span>
+        
+      </div>
+      <div class="addr-box" id="addr-teanau">
+        <span class="addr-text">Distinction Te Anau Hotel & Villas, 64 Lakefront Drive, Te Anau 9640, New Zealand</span>
+        <button class="copy-btn" onclick="copyAddr('Distinction Te Anau Hotel & Villas, 64 Lakefront Drive, Te Anau 9640, New Zealand', this)">复制</button>
+      </div>
+      <div class="act-grid">
+        <span class="act-tag">🌅 Steamer Wharf 码头 · 早餐咖啡<br><small>约 30–45min · 酒店步行 2 分钟</small><span class="act-addr-btn" onclick="toggleActAddr('aa-steamer')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-steamer')">🅿️ 停车</span><div class="act-addr-box" id="aa-steamer"><span class="act-addr-text">Steamer Wharf, Beach Street, Queenstown 9300, New Zealand</span><button class="act-copy-btn" data-addr="Steamer Wharf, Beach Street, Queenstown 9300, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-steamer">🅿️ Crowne Plaza 代客泊车 代客泊车（推荐，省心）<br>白天市区停车约 –6/小时<br>晚 6pm–早 8am 路边免费</div></span>
+        <span class="act-tag">🛍 The Mall / Beach St 主街<br><small>约 30min · 酒店门口即是</small><span class="act-addr-btn" onclick="toggleActAddr('aa-mall')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-mall')">🅿️ 停车</span><div class="act-addr-box" id="aa-mall"><span class="act-addr-text">The Mall, Beach Street, Queenstown 9300, New Zealand</span><button class="act-copy-btn" data-addr="The Mall, Beach Street, Queenstown 9300, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-mall">🅿️ <strong>收费</strong>（白天）· 市区停车场收费<br>晚 6pm 后路边免费<br>酒店住客建议用 Crowne Plaza 代客泊车</div></span>
+        <span class="act-tag">🚡 Skyline Gondola 缆车<br><small>约 1–1.5h · 上午随到随坐，无需选时间</small><span class="act-addr-btn" onclick="toggleActAddr('aa-skyline')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-skyline')">🅿️ 停车</span><div class="act-addr-box" id="aa-skyline"><span class="act-addr-text">Skyline Queenstown, 53 Brecon Street, Queenstown 9300, New Zealand</span><button class="act-copy-btn" data-addr="Skyline Queenstown, 53 Brecon Street, Queenstown 9300, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-skyline">🅿️ <strong>收费</strong> · 自带多层停车楼<br>按小时收费；或步行 10 分钟从市中心</div></span>
+        <span class="act-tag">🍔 Fergburger 皇后镇网红汉堡<br><small>约 30–45min（含排队）· 最晚 12:30 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-fergburger')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-fergburger')">🅿️ 停车</span><div class="act-addr-box" id="aa-fergburger"><span class="act-addr-text">Fergburger, 42 Shotover Street, Queenstown 9300, New Zealand</span><button class="act-copy-btn" data-addr="Fergburger, 42 Shotover Street, Queenstown 9300, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-fergburger">🅿️ <strong>收费</strong> · 附近 O'Connells / Earl Street 停车场<br>市中心步行即可</div></span>
+        <span class="act-tag">✨ Te Anau 萤火虫洞 19:00–21:15<br><small>共 2h15min · 18:30 集合报到</small><span class="act-addr-btn" onclick="toggleActAddr('aa-glow2')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-glow2')">🅿️ 停车</span><div class="act-addr-box" id="aa-glow2"><span class="act-addr-text">RealNZ Te Anau Visitor Centre, 85 Lakefront Drive, Te Anau 9640, New Zealand</span><button class="act-copy-btn" data-addr="RealNZ Te Anau Visitor Centre, 85 Lakefront Drive, Te Anau 9640, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-glow2">🅿️ <strong>免费</strong> · Lakefront Drive 沿路路边停车<br>空间充裕，从酒店步行约 10 分钟</div></span>
+      </div>
+
+      <div class="schedule">
+        <div class="section-label">行程时间轴</div>
+        <div class="sched-item"><span class="sched-time">08:00</span><span class="sched-desc">酒店早餐（Crowne Plaza 含早餐）</span></div>
+        <div class="sched-item"><span class="sched-time">09:00</span><span class="sched-desc">Steamer Wharf 码头 + Beach Street 主街溜达，湖边晨景（酒店门口即是，步行 2 分钟）</span></div>
+        <div class="sched-item"><span class="sched-time">09:30–11:00</span><span class="sched-desc">Skyline Gondola 上山（9am 开门，早去人少，票提前买好直接坐）</span></div>
+        <div class="sched-item"><span class="sched-time">11:30</span><span class="sched-desc">Fergburger 午饭（42 Shotover St，11 点多去不是最高峰）</span></div>
+        <div class="sched-item"><span class="sched-time">13:00</span><span class="sched-desc">出发前往 Te Anau，约 2 小时车程</span></div>
+        <div class="sched-item"><span class="sched-time">15:00–18:00</span><span class="sched-desc">抵达 Te Anau，入住酒店，休息放松</span></div>
+        <div class="sched-item"><span class="sched-time">18:30</span><span class="sched-desc">步行约 10 分钟至 RealNZ 游客中心集合（85 Lakefront Drive）</span></div>
+        <div class="sched-item"><span class="sched-time">19:00–21:15</span><span class="sched-desc">✨ Te Anau 萤火虫洞 — 乘船进入黑暗洞穴，顶部密布萤火虫如置身星河</span></div>
+      </div>
+
+      <div class="book-section">
+        <div class="section-label">活动预订状态</div>
+        <div class="book-item" style="background:rgba(109,175,138,0.07);border-color:rgba(109,175,138,0.25);">
+          <span class="book-name">✨ Te Anau Glowworm Caves 萤火虫洞</span>
+          
+          <span class="addr-toggle" onclick="toggleAddr('addr-glowworm')">📍 集合地址</span>
+        </div>
+        <div class="addr-box" id="addr-glowworm">
+          <span class="addr-text">85 Lakefront Drive, Te Anau 9640, New Zealand</span>
+          <button class="copy-btn" onclick="copyAddr('85 Lakefront Drive, Te Anau 9640, New Zealand', this)">复制</button>
+        </div>
+        <div class="book-item" style="background:rgba(232,164,66,0.06);border-color:rgba(232,164,66,0.2);">
+          <span class="book-name">🚡 Skyline Gondola Only · Family 套票</span>
+          
+          <a class="book-link" href="https://queenstown.skyline.co.nz/book-now/" target="_blank">预订 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 6 ── -->
+  <div class="day-card">
+    <div class="tl">
+      <div class="tl-date">Jun<br>30</div>
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="dc">
+      <div class="dc-header">
+        <span class="dc-day-num">DAY 06</span>
+        <span class="dc-weekday">Tuesday</span>
+      </div>
+      <div class="dc-route">Te Anau → Milford Sound → Te Anau</div>
+
+      <div class="hotel-row">
+        <span class="hotel-icon">🏨</span>
+        <div class="hotel-details">
+          <div class="hotel-name">Distinction Te Anau Hotel</div>
+          <div class="hotel-sub"><span>连住第二晚 · 含早餐</span></div>
+        </div>
+        <span class="addr-toggle" onclick="toggleAddr('addr-teanau2')">📍 地址</span>
+        <span class="hotel-badge badge-ok">已确认</span>
+      </div>
+      <div class="addr-box" id="addr-teanau2">
+        <span class="addr-text">Distinction Te Anau Hotel & Villas, 64 Lakefront Drive, Te Anau 9640, New Zealand</span>
+        <button class="copy-btn" onclick="copyAddr('Distinction Te Anau Hotel & Villas, 64 Lakefront Drive, Te Anau 9640, New Zealand', this)">复制</button>
+      </div>
+
+      <div class="act-grid">
+        <span class="act-tag">🪞 Mirror Lakes 镜湖<br><small>约 15–20min · 途中停留</small><span class="act-addr-btn" onclick="toggleActAddr('aa-mirror')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-mirror')">🅿️ 停车</span><div class="act-addr-box" id="aa-mirror"><span class="act-addr-text">Mirror Lakes, Milford Road, Fiordland, Southland 9679, New Zealand</span><button class="act-copy-btn" data-addr="Mirror Lakes, Milford Road, Fiordland, Southland 9679, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-mirror">🅿️ <strong>免费</strong> · 路边专属停车区<br>有指示牌，约可停 20–30 辆</div></span>
+        <span class="act-tag">🚢 Milford Sound 游船 13:30–15:30<br><small>共 2h · 13:15 必须到达码头</small><span class="act-addr-btn" onclick="toggleActAddr('aa-milford2')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-milford2')">🅿️ 停车</span><div class="act-addr-box" id="aa-milford2"><span class="act-addr-text">Milford Sound Visitor Terminal, Milford Sound, Fiordland 9679, New Zealand</span><button class="act-copy-btn" data-addr="Milford Sound Visitor Terminal, Milford Sound, Fiordland 9679, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-milford2">🅿️ <strong>选项一（推荐）免费</strong> · Deepwater Basin Road<br>步行约 25–30 分钟到码头，或等免费接驳巴士（约每 15 分钟一班）<br>位置有限，先到先得<br><br>🅿️ <strong>选项二 收费</strong> · 码头主停车场（步行 10 分钟）<br>3PM 前按全价收费，3PM 后半价<br>只收信用卡/借记卡，不收现金</div></span>
+        <span class="act-tag">💧 瀑布 · 海豚 · 峡湾<br><small>游船途中欣赏</small></span>
+      </div>
+
+      <div class="schedule">
+        <div class="section-label">行程时间轴</div>
+        <div class="sched-item"><span class="sched-time">早晨</span><span class="sched-desc">从 Te Anau 出发前往 Milford Sound，约 4 小时车程，途经 Mirror Lakes</span></div>
+        <div class="sched-item"><span class="sched-time">13:15</span><span class="sched-desc">⚠️ 必须到达集合点 — Milford Sound Visitor Terminal, Fiordland 9679</span></div>
+        <div class="sched-item"><span class="sched-time">13:30–15:30</span><span class="sched-desc">🚢 Milford Sound 游船，峡湾峭壁、瀑布、可能遇见海豚</span></div>
+        <div class="sched-item"><span class="sched-time">15:30</span><span class="sched-desc">下船，停车于 Deepwater Basin Road（免费）</span></div>
+        <div class="sched-item"><span class="sched-time">下午</span><span class="sched-desc">开车返回 Te Anau，约 1 小时</span></div>
+      </div>
+
+      <div class="scenic-box">
+        <strong>📍 风景重点：</strong>Milford Sound 被誉为"世界第八大奇景"，峡湾两侧峭壁高耸，Stirling Falls 瀑布直落入海。冬季云雾缭绕，更有神秘感。停车首选 Deepwater Basin Road Parking（免费）。
+      </div>
+
+      <div class="book-section">
+        <div class="section-label">活动预订状态</div>
+        <div class="book-item" style="background:rgba(109,175,138,0.07);border-color:rgba(109,175,138,0.25);">
+          <span class="book-name">🚢 Milford Sound 游船 · 13:30–15:30</span>
+          
+          <span class="addr-toggle" onclick="toggleAddr('addr-milford')">📍 集合地址</span>
+        </div>
+        <div class="addr-box" id="addr-milford">
+          <span class="addr-text">Milford Sound Visitor Terminal, Milford Sound, Fiordland 9679, New Zealand</span>
+          <button class="copy-btn" onclick="copyAddr('Milford Sound Visitor Terminal, Milford Sound, Fiordland 9679, New Zealand', this)">复制</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 7 ── -->
+  <div class="day-card">
+    <div class="tl">
+      <div class="tl-date">Jul<br>01</div>
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="dc">
+      <div class="dc-header">
+        <span class="dc-day-num">DAY 07</span>
+        <span class="dc-weekday">Wednesday</span>
+      </div>
+      <div class="dc-route">Te Anau → Dunedin</div>
+
+      <div class="hotel-row">
+        <span class="hotel-icon">🏨</span>
+        <div class="hotel-details">
+          <div class="hotel-name">Scenic Hotel / Fable Dunedin</div>
+          <div class="hotel-sub">
+            <span>🍳 无早餐</span>
+            <span class="sep">|</span>
+            <span>📥 入住 14:00 之后</span>
+            <span class="sep">|</span>
+            <span>📤 离店 10:00 之前</span>
+          </div>
+        </div>
+        <span class="addr-toggle" onclick="toggleAddr('addr-dunedin')">📍 地址</span>
+        <span class="hotel-badge badge-ok">已确认</span>
+        
+      </div>
+      <div class="addr-box" id="addr-dunedin">
+        <span class="addr-text">Scenic Hotel Southern Cross, 118 High Street, Dunedin 9016, New Zealand</span>
+        <button class="copy-btn" onclick="copyAddr('Scenic Hotel Southern Cross, 118 High Street, Dunedin 9016, New Zealand', this)">复制</button>
+      </div>
+      <div class="act-grid">
+        <span class="act-tag">🚂 Dunedin Railway Station 火车站<br><small>约 20–30min · 外观拍照为主</small><span class="act-addr-btn" onclick="toggleActAddr('aa-station')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-station')">🅿️ 停车</span><div class="act-addr-box" id="aa-station"><span class="act-addr-text">Dunedin Railway Station, Anzac Square, Dunedin 9016, New Zealand</span><button class="act-copy-btn" data-addr="Dunedin Railway Station, Anzac Square, Dunedin 9016, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-station">🅿️ <strong>免费</strong> · Anzac Square 周边路边停车</div></span>
+        <span class="act-tag">📐 Baldwin Street 世界最陡街道<br><small>约 20–30min · 走上去即可</small><span class="act-addr-btn" onclick="toggleActAddr('aa-baldwin')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-baldwin')">🅿️ 停车</span><div class="act-addr-box" id="aa-baldwin"><span class="act-addr-text">Baldwin Street, North East Valley, Dunedin 9010, New Zealand</span><button class="act-copy-btn" data-addr="Baldwin Street, North East Valley, Dunedin 9010, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-baldwin">🅿️ <strong>免费</strong> · Baldwin Street 路边及周边街道</div></span>
+        <span class="act-tag">🏛 The Octagon 八角广场<br><small>约 30–45min · 晚餐选址</small><span class="act-addr-btn" onclick="toggleActAddr('aa-octagon')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-octagon')">🅿️ 停车</span><div class="act-addr-box" id="aa-octagon"><span class="act-addr-text">The Octagon, Dunedin Central, Dunedin 9016, New Zealand</span><button class="act-copy-btn" data-addr="The Octagon, Dunedin Central, Dunedin 9016, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-octagon">🅿️ 部分免费 · 周边路边有限时免费停车<br>夜间通常免费</div></span>
+        <span class="act-tag">🌊 东海岸风光<br><small>途中观景</small></span>
+        <span class="act-tag">🐧 Otago Peninsula 企鹅（可选）<br><small>约 2–3h · 需提前预订观鸟团</small><span class="act-addr-btn" onclick="toggleActAddr('aa-penguin')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-penguin')">🅿️ 停车</span><div class="act-addr-box" id="aa-penguin"><span class="act-addr-text">Otago Peninsula, Portobello Road, Dunedin 9014, New Zealand</span><button class="act-copy-btn" data-addr="Otago Peninsula, Portobello Road, Dunedin 9014, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-penguin">🅿️ <strong>免费</strong> · Portobello Road 沿路路边停车</div></span>
+      </div>
+
+      <div class="schedule">
+        <div class="section-label">行程时间轴</div>
+        <div class="sched-item"><span class="sched-time">早晨</span><span class="sched-desc">从 Te Anau 出发，全程约 4–5 小时车程</span></div>
+        <div class="sched-item"><span class="sched-time">下午</span><span class="sched-desc">抵达 Dunedin，苏格兰风格老城，有浓厚学院气质</span></div>
+        <div class="sched-item"><span class="sched-time">下午</span><span class="sched-desc">Baldwin Street — 全球坡度最陡街道，适合拍照打卡</span></div>
+        <div class="sched-item"><span class="sched-time">傍晚</span><span class="sched-desc">Dunedin 火车站（哥特式建筑）·  The Octagon 广场晚餐</span></div>
+      </div>
+
+      <div class="scenic-box">
+        <strong>📍 风景重点：</strong>Dunedin 火车站是新西兰最上镜的建筑之一，弗莱明顿式哥特风格。Baldwin Street 坡度 35°，是吉尼斯认证最陡街道。附近 Otago Peninsula 可观企鹅、皇家信天翁。
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 8 ── -->
+  <div class="day-card">
+    <div class="tl">
+      <div class="tl-date">Jul<br>02</div>
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="dc">
+      <div class="dc-header">
+        <span class="dc-day-num">DAY 08</span>
+        <span class="dc-weekday">Thursday</span>
+      </div>
+      <div class="dc-route">Dunedin → Oamaru → Timaru → Christchurch</div>
+
+      <div class="act-grid">
+        <span class="act-tag">🐧 Oamaru 奥马鲁 · 维多利亚白石建筑<br><small>约 1–1.5h · 最晚 11:00 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-oamaru')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-oamaru')">🅿️ 停车</span><div class="act-addr-box" id="aa-oamaru"><span class="act-addr-text">Oamaru Victorian Precinct, Thames Street, Oamaru 9400, New Zealand</span><button class="act-copy-btn" data-addr="Oamaru Victorian Precinct, Thames Street, Oamaru 9400, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-oamaru">🅿️ <strong>免费</strong> · Thames Street 周边路边 + Victorian Precinct 内停车场</div></span>
+        <span class="act-tag">🌊 Timaru 提马鲁<br><small>约 20–30min 加油休息即可</small><span class="act-addr-btn" onclick="toggleActAddr('aa-timaru')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-timaru')">🅿️ 停车</span><div class="act-addr-box" id="aa-timaru"><span class="act-addr-text">Timaru Town Centre, Stafford Street, Timaru 7910, New Zealand</span><button class="act-copy-btn" data-addr="Timaru Town Centre, Stafford Street, Timaru 7910, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-timaru">🅿️ <strong>免费</strong> · 市区路边停车普遍免费<br>加油站附近均可停</div></span>
+        <span class="act-tag">🛣 东海岸公路 → Christchurch<br><small>约 3h · 建议 11:30 出发</small></span>
+      </div>
+
+      <div class="schedule">
+        <div class="section-label">行程时间轴</div>
+        <div class="sched-item"><span class="sched-time">早晨</span><span class="sched-desc">从 Dunedin 北上，约 1.5 小时抵达 Oamaru</span></div>
+        <div class="sched-item"><span class="sched-time">上午</span><span class="sched-desc">Oamaru — 维多利亚历史区、白石建筑群，可能邂逅蓝企鹅</span></div>
+        <div class="sched-item"><span class="sched-time">下午</span><span class="sched-desc">继续北上经 Timaru，沿东海岸返回 Christchurch（约 3 小时）</span></div>
+        <div class="sched-item"><span class="sched-time">晚上</span><span class="sched-desc">抵达基督城，末夜</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 9 ── -->
+  <div class="day-card">
+    <div class="tl">
+      <div class="tl-date">Jul<br>03</div>
+      <div class="tl-dot"></div>
+      <div class="tl-line"></div>
+    </div>
+    <div class="dc">
+      <div class="dc-header">
+        <span class="dc-day-num">DAY 09</span>
+        <span class="dc-weekday">Friday</span>
+      </div>
+      <div class="dc-route">Christchurch → Sydney ✈</div>
+      <div class="act-grid">
+        <span class="act-tag">✈ 阿联酋航空 EK413</span>
+        <span class="act-tag">🛫 17:20 基督城国际 出发</span>
+        <span class="act-tag">🛬 18:40 悉尼金斯福德 T1 抵达</span>
+        <span class="act-tag">🚗 Airport Transfer</span>
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+<footer>
+  NEW ZEALAND SOUTH ISLAND · SELF-DRIVE · 9 DAYS 8 NIGHTS · JUN 25 – JUL 3, 2026
+</footer>
+
+<script>
+function toggleAddr(id) {
+  const box = document.getElementById(id);
+  if (box) box.classList.toggle('open');
+}
+function toggleActAddr(id) {
+  const box = document.getElementById(id);
+  if (box) box.classList.toggle('open');
+}
+function copyAddr(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '已复制 ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '复制'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+function copyFromData(btn) {
+  const text = btn.getAttribute('data-addr');
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '已复制 ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '复制地址'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => {
+    // Fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '已复制 ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '复制地址'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>
