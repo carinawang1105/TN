@@ -744,6 +744,7 @@ footer {
 .copy-btn:hover { opacity: 0.8; }
 .copy-btn.copied { background: var(--sage); }
 
+@media (max-width: 768px) {
   header, main { padding-left: 24px; padding-right: 24px; }
   .budget-bar { padding-left: 24px; padding-right: 24px; }
   .budget-inner { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -845,7 +846,7 @@ footer {
         <span class="meta-label">交通方式</span>
         <span class="meta-value">全程自驾</span>
       </div>
-      
+
     </div>
 
     <div class="route-crumb" style="margin-top:20px;">
@@ -942,7 +943,7 @@ footer {
         </div>
         <span class="addr-toggle" onclick="toggleAddr('addr-twizel')">📍 地址</span>
         <span class="hotel-badge badge-ok">已确认</span>
-        
+
       </div>
       <div class="addr-box" id="addr-twizel">
         <span class="addr-text">Mountain Chalets Motel, 12 Wairepo Road, Twizel 7901, New Zealand</span>
@@ -1008,7 +1009,7 @@ footer {
         </div>
         <span class="addr-toggle" onclick="toggleAddr('addr-queenstown')">📍 地址</span>
         <span class="hotel-badge badge-ok">已确认</span>
-        
+
       </div>
       <div class="addr-box" id="addr-queenstown">
         <span class="addr-text">Crowne Plaza Queenstown, 93 Beach Street, Queenstown 9300, New Zealand</span>
@@ -1016,20 +1017,21 @@ footer {
       </div>
 
       <div class="act-grid">
-        <span class="act-tag">🌳 Wanaka Tree 网红孤树<br><small>约 20–30min · 湖边随拍</small><span class="act-addr-btn" onclick="toggleActAddr('aa-wanakatree')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-wanakatree')">🅿️ 停车</span><div class="act-addr-box" id="aa-wanakatree"><span class="act-addr-text">That Wanaka Tree, Roys Bay Lakefront, Wanaka 9305, New Zealand</span><button class="act-copy-btn" data-addr="That Wanaka Tree, Roys Bay Lakefront, Wanaka 9305, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-wanakatree">🅿️ <strong>免费</strong> · Wanaka Marina Carpark 或 Ardmore Street 路边<br>步行 3–5 分钟可到</div></span>
-        <span class="act-tag">🏠 Puzzling World 斜屋<br><small>约 1.5–2h · 最晚 14:00 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-puzzling')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-puzzling')">🅿️ 停车</span><div class="act-addr-box" id="aa-puzzling"><span class="act-addr-text">Puzzling World, 188 Wanaka-Luggate Highway, Wanaka 9305, New Zealand</span><button class="act-copy-btn" data-addr="Puzzling World, 188 Wanaka-Luggate Highway, Wanaka 9305, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-puzzling">🅿️ <strong>免费</strong> · 自带免费停车场<br>场地宽敞，无需担心</div></span>
-        <span class="act-tag">🏞 Wanaka 湖边午餐<br><small>约 1h · 最晚 15:00 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-wanaka')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-wanaka')">🅿️ 停车</span><div class="act-addr-box" id="aa-wanaka"><span class="act-addr-text">Wanaka Lakefront, Lakeside Road, Wanaka 9305, New Zealand</span><button class="act-copy-btn" data-addr="Wanaka Lakefront, Lakeside Road, Wanaka 9305, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-wanaka">🅿️ <strong>免费</strong> · Ardmore Street / Lakeside Road 路边停车<br>数量充裕</div></span>
-        <span class="act-tag">🛣 Lindis Pass 中线公路<br><small>途中风景路段 · 不停车约 1h</small></span>
-        <span class="act-tag">⛏ Arrowtown 淘金小镇<br><small>约 1–1.5h · 最晚 17:00 离开</small><span class="act-addr-btn" onclick="toggleActAddr('aa-arrowtown')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-arrowtown')">🅿️ 停车</span><div class="act-addr-box" id="aa-arrowtown"><span class="act-addr-text">Buckingham Street, Arrowtown 9302, New Zealand</span><button class="act-copy-btn" data-addr="Buckingham Street, Arrowtown 9302, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-arrowtown">🅿️ <strong>免费</strong> · Arrow Lane Carpark 及镇内路边<br>均免费，无需担心</div></span>
+        <span class="act-tag">🌳 Wanaka Tree 网红孤树<br><small>约 20–30min · 11:00 打卡</small><span class="act-addr-btn" onclick="toggleActAddr('aa-wanakatree')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-wanakatree')">🅿️ 停车</span><div class="act-addr-box" id="aa-wanakatree"><span class="act-addr-text">That Wanaka Tree, Roys Bay Lakefront, Wanaka 9305, New Zealand</span><button class="act-copy-btn" data-addr="That Wanaka Tree, Roys Bay Lakefront, Wanaka 9305, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-wanakatree">🅿️ <strong>免费</strong> · Wanaka Marina Carpark 或 Ardmore Street 路边<br>步行 3–5 分钟可到</div></span>
+        <span class="act-tag">🏞 Wanaka 湖边午餐<br><small>约 1h · 11:30–12:30</small><span class="act-addr-btn" onclick="toggleActAddr('aa-wanaka')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-wanaka')">🅿️ 停车</span><div class="act-addr-box" id="aa-wanaka"><span class="act-addr-text">Wanaka Lakefront, Lakeside Road, Wanaka 9305, New Zealand</span><button class="act-copy-btn" data-addr="Wanaka Lakefront, Lakeside Road, Wanaka 9305, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-wanaka">🅿️ <strong>免费</strong> · Ardmore Street / Lakeside Road 路边停车<br>数量充裕</div></span>
+        <span class="act-tag">🛣 Crown Range 皇冠山路<br><small>翻山去 Arrowtown · 约 1h</small></span>
+        <span class="act-tag">⛏ Arrowtown 淘金小镇<br><small>约 40min · 13:30–14:10</small><span class="act-addr-btn" onclick="toggleActAddr('aa-arrowtown')">📍 地址</span><span class="act-park-btn" onclick="toggleActAddr('ap-arrowtown')">🅿️ 停车</span><div class="act-addr-box" id="aa-arrowtown"><span class="act-addr-text">Buckingham Street, Arrowtown 9302, New Zealand</span><button class="act-copy-btn" data-addr="Buckingham Street, Arrowtown 9302, New Zealand" onclick="copyFromData(this)">复制地址</button></div><div class="act-park-box" id="ap-arrowtown">🅿️ <strong>免费</strong> · Arrow Lane Carpark 及镇内路边<br>均免费，无需担心</div></span>
       </div>
 
       <div class="schedule">
         <div class="section-label">行程时间轴</div>
-        <div class="sched-item"><span class="sched-time">早晨</span><span class="sched-desc">从 Twizel 出发，走中线（勿走1号公路），约 3 小时</span></div>
-        <div class="sched-item"><span class="sched-time">12:00</span><span class="sched-desc">抵达 Wanaka — 湖边吃喝，Puzzling World 斜屋，Wanaka Tree 打卡</span></div>
-        <div class="sched-item"><span class="sched-time">15:00</span><span class="sched-desc">出发 Arrowtown（淘金镇），约 40 分钟车程</span></div>
-        <div class="sched-item"><span class="sched-time">17:00-18:00</span><span class="sched-desc">从 Arrowtown 开车直接前往皇后镇，约 25 分钟</span></div>
-        <div class="sched-item"><span class="sched-time">晚上</span><span class="sched-desc">入住皇后镇，湖畔夜景</span></div>
+        <div class="sched-item"><span class="sched-time">~9:00</span><span class="sched-desc">从 Twizel 出发，走中线（勿走1号公路）</span></div>
+        <div class="sched-item"><span class="sched-time">~11:00</span><span class="sched-desc">抵达 Wanaka（车程约 1h45–2h）</span></div>
+        <div class="sched-item"><span class="sched-time">11:00–11:30</span><span class="sched-desc">Wanaka Tree 网红孤树 打卡</span></div>
+        <div class="sched-item"><span class="sched-time">11:30–12:30</span><span class="sched-desc">Wanaka 湖边午餐</span></div>
+        <div class="sched-item"><span class="sched-time">~12:30</span><span class="sched-desc">翻皇冠山路（Crown Range）前往 Arrowtown，约 1 小时</span></div>
+        <div class="sched-item"><span class="sched-time">13:30–14:10</span><span class="sched-desc">Arrowtown 淘金小镇 — 逛主街 + 拍照 + 河边华人聚落</span></div>
+        <div class="sched-item"><span class="sched-time">~14:35</span><span class="sched-desc">抵达皇后镇（车程约 25 分钟，走 SH6 经 Frankton），入住，湖畔夜景</span></div>
       </div>
 
       <div class="scenic-box">
@@ -1066,7 +1068,7 @@ footer {
         </div>
         <span class="addr-toggle" onclick="toggleAddr('addr-teanau')">📍 地址</span>
         <span class="hotel-badge badge-ok">已确认</span>
-        
+
       </div>
       <div class="addr-box" id="addr-teanau">
         <span class="addr-text">Distinction Te Anau Hotel & Villas, 64 Lakefront Drive, Te Anau 9640, New Zealand</span>
@@ -1096,7 +1098,7 @@ footer {
         <div class="section-label">活动预订状态</div>
         <div class="book-item" style="background:rgba(109,175,138,0.07);border-color:rgba(109,175,138,0.25);">
           <span class="book-name">✨ Te Anau Glowworm Caves 萤火虫洞</span>
-          
+
           <span class="addr-toggle" onclick="toggleAddr('addr-glowworm')">📍 集合地址</span>
         </div>
         <div class="addr-box" id="addr-glowworm">
@@ -1105,7 +1107,7 @@ footer {
         </div>
         <div class="book-item" style="background:rgba(232,164,66,0.06);border-color:rgba(232,164,66,0.2);">
           <span class="book-name">🚡 Skyline Gondola Only · Family 套票</span>
-          
+
           <a class="book-link" href="https://queenstown.skyline.co.nz/book-now/" target="_blank">预订 ↗</a>
         </div>
       </div>
@@ -1163,7 +1165,7 @@ footer {
         <div class="section-label">活动预订状态</div>
         <div class="book-item" style="background:rgba(109,175,138,0.07);border-color:rgba(109,175,138,0.25);">
           <span class="book-name">🚢 Milford Sound 游船 · 13:30–15:30</span>
-          
+
           <span class="addr-toggle" onclick="toggleAddr('addr-milford')">📍 集合地址</span>
         </div>
         <div class="addr-box" id="addr-milford">
@@ -1202,7 +1204,7 @@ footer {
         </div>
         <span class="addr-toggle" onclick="toggleAddr('addr-dunedin')">📍 地址</span>
         <span class="hotel-badge badge-ok">已确认</span>
-        
+
       </div>
       <div class="addr-box" id="addr-dunedin">
         <span class="addr-text">Scenic Hotel Southern Cross, 118 High Street, Dunedin 9016, New Zealand</span>
